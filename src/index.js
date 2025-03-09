@@ -69,7 +69,7 @@ app.post("/github/:repoName/issues", async (req, res) => {
     );
 
     console.log(response.data);
-    res.status(200).send(response.data.html_url);
+    res.status(200).send(`issue url: ${response.data.html_url}`);
   } catch (error) {
     const message = `Error posting issue on repo: ${repoName}\n\n${error.message}`;
     console.error(error);
